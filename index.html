@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCOMLeaderboard 2025 - E-commerce Leaderboard Platform</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <nav class="navbar">
@@ -161,13 +160,23 @@
                     <div class="form-row">
                         <input type="number" placeholder="Order Value" id="testOrderValue" step="0.01" required>
                         <button type="submit" class="btn btn-primary">Simulate Purchase</button>
+                        <button type="button" onclick="resetSimulator()" class="btn btn-secondary">Reset Simulator</button>
                     </div>
                 </form>
+            </div>
+
+            <div class="connection-test">
+                <h3><i data-lucide="wifi" class="lucide-icon"></i> Connection Test</h3>
+                <button onclick="testConnection()" class="btn btn-primary">Test Store Connection</button>
+                <div id="connectionStatus" class="status-indicator" style="margin-top: 10px; display: none;">
+                    <span class="status-dot"></span>
+                    <span id="connectionStatusText">Testing...</span>
+                </div>
             </div>
         </div>
     </div>
 
-        <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         // Initialize Lucide after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
