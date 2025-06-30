@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCOMLeaderboard 2025 - E-commerce Leaderboard Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
-   
+
 </head>
 <body>
     <nav class="navbar">
@@ -168,6 +166,26 @@
             </div>
         </div>
     </div>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Debug: Check if icons were created
+            setTimeout(() => {
+                const icons = document.querySelectorAll('[data-lucide]');
+                console.log(`Found ${icons.length} Lucide icon placeholders`);
+                
+                icons.forEach(icon => {
+                    if (!icon.querySelector('svg')) {
+                        console.warn('Icon not rendered:', icon.dataset.lucide);
+                    }
+                });
+            }, 500);
+        });
+    </script>
 
     <script src="app.js"></script>
 </body>
