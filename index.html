@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCOMLeaderboard 2025 - E-commerce Leaderboard Platform</title>
     <link rel="stylesheet" href="styles.css">
+      <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- This initializes the icons -->
+  <script>lucide.createIcons();</script>
 </head>
 <body>
     <nav class="navbar">
@@ -80,36 +83,46 @@
                 <p>Here's how your store is performing</p>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-content">
-                        <h3 id="totalRevenue">$0</h3>
-                        <p>Total Revenue</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🛒</div>
-                    <div class="stat-content">
-                        <h3 id="totalOrders">0</h3>
-                        <p>Total Orders</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-content">
-                        <h3 id="leaderboardRank">#-</h3>
-                        <p>Leaderboard Rank</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-content">
-                        <h3 id="avgOrderValue">$0</h3>
-                        <p>Avg. Order Value</p>
-                    </div>
-                </div>
-            </div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i data-lucide="dollar-sign" class="lucide-icon"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="totalRevenue">$0</h3>
+            <p>Total Revenue</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i data-lucide="shopping-cart" class="lucide-icon"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="totalOrders">0</h3>
+            <p>Total Orders</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i data-lucide="bar-chart-2" class="lucide-icon"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="leaderboardRank">#-</h3>
+            <p>Leaderboard Rank</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i data-lucide="star" class="lucide-icon"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="avgOrderValue">$0</h3>
+            <p>Avg. Order Value</p>
+        </div>
+    </div>
+</div>
+            
 
             <div class="integration-section">
                 <div class="integration-card">
