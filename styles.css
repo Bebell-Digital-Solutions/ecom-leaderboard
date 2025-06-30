@@ -113,6 +113,29 @@ body {
   background: var(--bg-secondary);
 }
 
+
+.lucide-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    stroke-width: 2; /* controls the thickness of the icon lines */
+}
+
+.stat-icon {
+    /* Ensure the icon container has proper spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); /* subtle background for contrast */
+}
+
+
+
+
+
 .tab-btn {
   flex: 1;
   padding: 16px;
