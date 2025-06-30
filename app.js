@@ -24,6 +24,45 @@ class DataStore {
         }
     }
 
+
+
+// Connection Test Functions
+async function testConnection() {
+    const statusElement = document.getElementById('connectionStatus');
+    const textElement = document.getElementById('connectionStatusText');
+    const dotElement = statusElement.querySelector('.status-dot');
+    
+    statusElement.style.display = 'flex';
+    textElement.textContent = 'Testing connection...';
+    dotElement.style.backgroundColor = 'orange';
+    
+    try {
+        const isConnected = await simulateConnectionTest(dataStore.currentUser.storeUrl);
+        
+        if (isConnected) {
+            textElement.textContent = 'Connected successfully!';
+            dotElement.style.backgroundColor = 'green';
+            addActivityItem('Connection test successful', 'check-circle');
+        } else {
+            textElement.textContent = 'Script found but not receiving data';
+            dotElement.style.backgroundColor = 'orange';
+            addActivityItem('Connection test: script found but no data', 'alert-circle');
+        }
+    } catch (error) {
+        textElement.textContent = 'Connection failed - script not detected';
+        dotElement.style.backgroundColor = 'red';
+        addActivityItem('Connection test failed', 'x-circle');
+    }
+}
+
+async function simulateConnectionTest(storeUrl) {
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    return Math.random() > 0.3; // 70% success rate for demo
+}
+
+
+
+    
     saveUsers() {
         localStorage.setItem('ecomLeaderUsers', JSON.stringify(this.users));
     }
@@ -108,6 +147,16 @@ class DataStore {
         
         return transaction;
     }
+
+// Inside your DataStore class:
+getRecentTransactions(storeId, limit = 5) {
+    return this.transactions
+        .filter(t => t.storeId === storeId)
+        .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+        .slice(0, limit);
+}
+
+    
 
     getStoreStats(storeId) {
         const store = this.stores.find(s => s.id === storeId);
@@ -212,7 +261,11 @@ function updateDashboard() {
     
     // Update recent activity
     updateRecentActivity();
+ 
+    // Add this at the end:
+    updateConnectionStatus();   
 }
+
 
 function generateTrackingCode(apiKey) {
     return `<!-- eCOMLeaderboard 2025 Tracking Code -->
@@ -253,6 +306,14 @@ function updateIntegrationStatus() {
     if (dataStore.currentUser) {
         statusDot.classList.add('connected');
         statusText.textContent = 'Connected & Tracking';
+    }
+}
+
+// Add this new helper function:
+function updateConnectionStatus() {
+    const statusElement = document.getElementById('connectionStatus');
+    if (statusElement.style.display === 'flex') {
+        testConnection(); // Refresh status if already visible
     }
 }
 
