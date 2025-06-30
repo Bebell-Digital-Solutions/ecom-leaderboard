@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCOMLeaderboard 2025 - E-commerce Leaderboard Platform</title>
     <link rel="stylesheet" href="styles.css">
-      <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- This initializes the icons -->
-  <script>lucide.createIcons();</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <style>
+        /* Add this to your styles.css or keep it here */
+        .lucide-icon {
+            width: 24px;
+            height: 24px;
+            color: white;
+            stroke-width: 2;
+        }
+        .stat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -83,50 +100,48 @@
                 <p>Here's how your store is performing</p>
             </div>
 
-
-<div class="stats-grid">
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i data-lucide="dollar-sign" class="lucide-icon"></i>
-        </div>
-        <div class="stat-content">
-            <h3 id="totalRevenue">$0</h3>
-            <p>Total Revenue</p>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i data-lucide="shopping-cart" class="lucide-icon"></i>
-        </div>
-        <div class="stat-content">
-            <h3 id="totalOrders">0</h3>
-            <p>Total Orders</p>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i data-lucide="bar-chart-2" class="lucide-icon"></i>
-        </div>
-        <div class="stat-content">
-            <h3 id="leaderboardRank">#-</h3>
-            <p>Leaderboard Rank</p>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i data-lucide="star" class="lucide-icon"></i>
-        </div>
-        <div class="stat-content">
-            <h3 id="avgOrderValue">$0</h3>
-            <p>Avg. Order Value</p>
-        </div>
-    </div>
-</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-lucide="dollar-sign" class="lucide-icon"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-lucide="shopping-cart" class="lucide-icon"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalOrders">0</h3>
+                        <p>Total Orders</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-lucide="bar-chart-2" class="lucide-icon"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="leaderboardRank">#-</h3>
+                        <p>Leaderboard Rank</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-lucide="star" class="lucide-icon"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="avgOrderValue">$0</h3>
+                        <p>Avg. Order Value</p>
+                    </div>
+                </div>
+            </div>
             
-
             <div class="integration-section">
                 <div class="integration-card">
-                    <h3>🚀 Integration Setup</h3>
+                    <h3><i data-lucide="rocket" class="lucide-icon"></i> Integration Setup</h3>
                     <p>Add this tracking code to your store's header to start collecting data:</p>
                     
                     <div class="code-container">
@@ -143,10 +158,10 @@
                 </div>
 
                 <div class="integration-card">
-                    <h3>📈 Recent Activity</h3>
+                    <h3><i data-lucide="activity" class="lucide-icon"></i> Recent Activity</h3>
                     <div id="recentActivity" class="activity-list">
                         <div class="activity-item">
-                            <span class="activity-icon">🔗</span>
+                            <i data-lucide="link" class="lucide-icon"></i>
                             <span>Tracking code generated</span>
                             <span class="activity-time">Just now</span>
                         </div>
@@ -155,7 +170,7 @@
             </div>
 
             <div class="test-section">
-                <h3>🧪 Test Integration</h3>
+                <h3><i data-lucide="flask-conical" class="lucide-icon"></i> Test Integration</h3>
                 <p>Simulate a purchase to test your integration:</p>
                 <form onsubmit="simulatePurchase(event)" class="test-form">
                     <div class="form-row">
