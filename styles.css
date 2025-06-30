@@ -114,6 +114,44 @@ body {
 }
 
 
+        /* Add this to your styles.css or in the head */
+        .test-form .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .test-form .form-row input {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .test-form .form-row .btn {
+            white-space: nowrap;
+        }
+        
+        .connection-test {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+        
+        .connection-test h3 {
+            margin: 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        #connectionStatus {
+            margin-left: 10px;
+        }
+
+
+
 .lucide-icon {
     width: 24px;
     height: 24px;
