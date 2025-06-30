@@ -153,27 +153,26 @@
                 </div>
             </div>
 
-            <div class="test-section">
-                <h3><i data-lucide="flask-conical" class="lucide-icon"></i> Test Integration</h3>
-                <p>Simulate a purchase to test your integration:</p>
-                <form onsubmit="simulatePurchase(event)" class="test-form">
-                    <div class="form-row">
-                        <input type="number" placeholder="Order Value" id="testOrderValue" step="0.01" required>
-                        <button type="submit" class="btn btn-primary">Simulate Purchase</button>
-                        <button type="button" onclick="resetSimulator()" class="btn btn-secondary">Reset Simulator</button>
-                        <div class="connection-test">
-                <h3><i data-lucide="wifi" class="lucide-icon"></i> Connection Test</h3>
-                <button onclick="testConnection()" class="btn btn-primary">Test Store Connection</button>
-                <div id="connectionStatus" class="status-indicator" style="margin-top: 10px; display: none;">
-                    <span class="status-dot"></span>
-                    <span id="connectionStatusText">Testing...</span>
+    <div class="test-section">
+        <h3><i data-lucide="flask-conical" class="lucide-icon"></i> Test Integration</h3>
+        <p>Simulate a purchase to test your integration:</p>
+        <form onsubmit="simulatePurchase(event)" class="test-form">
+            <div class="form-row">
+                <input type="number" placeholder="Order Value" id="testOrderValue" step="0.01" required>
+                <button type="submit" class="btn btn-primary">Simulate Purchase</button>
+                <button type="button" onclick="resetSimulator()" class="btn btn-secondary">Reset Simulator</button>
+                
+                <div class="connection-test">
+                    <h3><i data-lucide="wifi" class="lucide-icon"></i> Connection Test</h3>
+                    <button onclick="testConnection()" class="btn btn-primary">Test Connection</button>
+                    <div id="connectionStatus" class="status-indicator" style="display: none;">
+                        <span class="status-dot"></span>
+                        <span id="connectionStatusText">Testing...</span>
+                    </div>
                 </div>
             </div>
-                    
-                    </div>
-                </form>
-            </div>
-
+        </form>
+    </div>
 
         </div>
     </div>
